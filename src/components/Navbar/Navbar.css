@@ -1,0 +1,46 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+}
+
+
+.toggleContainer>* {
+    margin: 0 10px;
+  }
+  
+  .toggleContainer svg {
+    height: 20px;
+  }
+  
+  .toggle.react-toggle .react-toggle-track {
+    height: 16px;
+    width: 42px;
+    border: 2px solid;
+  }
+  
+  .toggle.react-toggle .react-toggle-thumb {
+    height: 18px;
+    width: 18px;
+    border: 2px solid;
+  }
+
+  .react-toggle-thumb {
+    left: 27px;
+    border-color: var(--dark-bgColor) !important;
+  }
+
+  .react-toggle--checked .react-toggle-thumb {
+    left: 27px;
+    border-color: var(--dark-color) !important;
+    background-color: var(--dark-bgColor);
+}
+
+.react-toggle--checked .react-toggle-track{
+    background-color:  var(--dark-color) !important;
+}
+.react-toggle-track{
+    background-color:  var(--dark-bgColor)!important;
+}
+
