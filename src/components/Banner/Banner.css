@@ -1,0 +1,51 @@
+.banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 76px);
+    width: 100vw;
+    padding: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.banner > *{
+    margin: 0;
+    box-sizing: border-box;
+}
+.banner-container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.banner-left,.banner-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-left{
+    width: 40%;
+    justify-content: center;
+}
+
+.banner-right{
+    width: 60%;
+    padding-right:15px ;
+}
+
+.apod{
+    width: 80%;
+    border-radius: 15px;
+}
+
+.banner-title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.banner-info{
+    width: 100%;
+}

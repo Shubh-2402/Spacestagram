@@ -13,7 +13,7 @@ function App() {
       style={{ backgroundColor: theme.backgroundColor, color: theme.color }}
     >
       <Navbar></Navbar>
-      {/* <Banner></Banner> */}
+      <Banner></Banner>
     </div>
   );
 }
