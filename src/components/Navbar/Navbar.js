@@ -14,7 +14,6 @@ function Navbar() {
       className="navbar"
       style={{
         borderBottom: `1px solid ${theme.color}`,
-        backgroundColor: theme.backgroundColor,
       }}
     >
       <SatelliteAlt sx={{ color: theme.color }}></SatelliteAlt>

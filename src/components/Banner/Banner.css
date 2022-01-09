@@ -57,6 +57,10 @@
     display: flex;
     justify-content: space-between;
 }
+
+.banner-info > p {
+    font-size: 1.2rem;
+}
 .banner-info{
     width: 100%;
 }

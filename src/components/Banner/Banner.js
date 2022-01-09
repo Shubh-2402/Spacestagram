@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Banner.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import { fontSize } from "@mui/system";
+import { ThemeContext } from "../../contexts/theme";
 
 function Banner() {
+  const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
   const [apod, setApod] = useState({});
   const [isloading, setIsloading] = useState(true);
 
@@ -32,7 +34,12 @@ function Banner() {
     getApod();
   }, []);
   return (
-    <div className="banner">
+    <div
+      className="banner"
+      style={{
+        borderBottom: `1px solid ${theme.color}`,
+      }}
+    >
       <div className="banner-container">
         <div className="banner-left">
           <div className="banner-image">
@@ -50,11 +57,11 @@ function Banner() {
         <div className="banner-right">
           <h1>Astronomy Picture of the Day</h1>
           <div className="banner-title">
-            <p>Title : {apod.title}</p>
-            <p>Date : {apod.date}</p>
+            <h3>Title : {apod.title}</h3>
+            <h3>Date : {apod.date}</h3>
           </div>
           <div className="banner-info">
-            <h3>{apod.explanation}</h3>
+            <p>{apod.explanation}</p>
           </div>
         </div>
       </div>
