@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
+import CircularProgress from "@mui/material/CircularProgress";
+import { fontSize } from "@mui/system";
 
 function Banner() {
   const [apod, setApod] = useState({});
+  const [isloading, setIsloading] = useState(true);
 
   const { REACT_APP_APIKEY } = process.env;
 
@@ -20,6 +23,9 @@ function Banner() {
           console.log(data);
           setApod(data);
         })
+        .then(() => {
+          setIsloading(false);
+        })
         .catch((err) => console.log(err));
     };
 
@@ -29,11 +35,17 @@ function Banner() {
     <div className="banner">
       <div className="banner-container">
         <div className="banner-left">
-          <img
-            src="https://apod.nasa.gov/apod/image/2201/JupiterOpal_HubbleMasztalerz_960.jpg"
-            alt="Astronomy Picture of the Day"
-            className="apod"
-          />
+          <div className="banner-image">
+            {isloading ? (
+              <CircularProgress color="inherit" size="5rem" />
+            ) : (
+              <img
+                src={apod.url}
+                alt="Astronomy Picture of the Day"
+                className="apod"
+              />
+            )}
+          </div>
         </div>
         <div className="banner-right">
           <h1>Astronomy Picture of the Day</h1>

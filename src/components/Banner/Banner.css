@@ -31,14 +31,25 @@
     justify-content: center;
 }
 
+.banner-image{
+    width: 80%;
+    height: fit-content;
+    border: 2px solid var(--dark-color);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .banner-right{
     width: 60%;
     padding-right:15px ;
 }
 
 .apod{
-    width: 80%;
-    border-radius: 15px;
+    width: 100%;
+    object-fit: contain;
 }
 
 .banner-title{
