@@ -3,6 +3,7 @@ import { ThemeContext } from "./contexts/theme";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Banner from "./components/Banner/Banner";
+import Gallery from "./components/Gallery/Gallery";
 
 function App() {
   const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
@@ -14,6 +15,7 @@ function App() {
     >
       <Navbar></Navbar>
       <Banner></Banner>
+      <Gallery></Gallery>
     </div>
   );
 }

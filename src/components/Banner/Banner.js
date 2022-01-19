@@ -3,6 +3,7 @@ import "./Banner.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import { fontSize } from "@mui/system";
 import { ThemeContext } from "../../contexts/theme";
+import { Skeleton } from "@mui/material";
 
 function Banner() {
   const [{ theme, isDark }, toggleTheme] = useContext(ThemeContext);
@@ -10,8 +11,6 @@ function Banner() {
   const [isloading, setIsloading] = useState(true);
 
   const { REACT_APP_APIKEY } = process.env;
-
-  console.log(process.env);
 
   useEffect(() => {
     // here we fetch the astronomy picture of the day
@@ -57,11 +56,71 @@ function Banner() {
         <div className="banner-right">
           <h1>Astronomy Picture of the Day</h1>
           <div className="banner-title">
-            <h3>Title : {apod.title}</h3>
-            <h3>Date : {apod.date}</h3>
+            {isloading ? (
+              <>
+                <Skeleton
+                  animation="wave"
+                  sx={{ bgcolor: "#D9D7F1" }}
+                  width={310}
+                  height={40}
+                />
+                <Skeleton
+                  animation="wave"
+                  sx={{ bgcolor: "#D9D7F1" }}
+                  width={310}
+                  height={40}
+                />
+              </>
+            ) : (
+              <>
+                <h3>Title : {apod.title}</h3>
+                <h3>Date : {apod.date}</h3>
+              </>
+            )}
           </div>
           <div className="banner-info">
-            <p>{apod.explanation}</p>
+            {isloading ? (
+              <>
+                <Skeleton
+                  animation="wave"
+                  sx={{ bgcolor: "#D9D7F1", marginBottom: "5px" }}
+                  width={710}
+                  height={30}
+                />
+                <Skeleton
+                  animation="wave"
+                  sx={{ bgcolor: "#D9D7F1", marginBottom: "5px" }}
+                  width={710}
+                  height={30}
+                />
+                <Skeleton
+                  animation="wave"
+                  sx={{ bgcolor: "#D9D7F1", marginBottom: "5px" }}
+                  width={710}
+                  height={30}
+                />
+                <Skeleton
+                  animation="wave"
+                  sx={{ bgcolor: "#D9D7F1", marginBottom: "5px" }}
+                  width={710}
+                  height={30}
+                />
+                <Skeleton
+                  animation="wave"
+                  sx={{ bgcolor: "#D9D7F1", marginBottom: "5px" }}
+                  width={710}
+                  height={30}
+                />
+                <Skeleton
+                  animation="wave"
+                  sx={{ bgcolor: "#D9D7F1", marginBottom: "5px" }}
+                  width={710}
+                  height={30}
+                />
+              </>
+            ) : (
+              <p2 style={{ fontSize: "1.2rem" }}>{apod.explanation}</p2>
+            )}
           </div>
         </div>
       </div>
